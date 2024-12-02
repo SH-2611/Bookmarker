@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- icon -->
+    <link rel="icon" href="img/bookmark.png" type="image/x-icon" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Bookmarker</title>
+  </head>
+  <body>
+    <section class="py-5">
+      <div class="container">
+        <div class="main-text d-flex align-items-center justify-content-center">
+          <h1 class="py-2">Bookmarker</h1>
+        </div>
+        <div class="form-content py-4 px-3 mt-5">
+          <div
+            class="title d-flex align-items-center justify-content-center mb-4"
+          >
+            <h2>
+              <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+          </div>
+
+          <div class="input-form">
+            <!-- Added text-center -->
+            <div class="mb-4">
+              <label for="formName" class="form-label fw-bold">
+                <i class="fa-solid fa-book-bookmark pe-2"></i> Site Name
+              </label>
+              <input
+                oninput="validNameInput(this)"
+                type="text"
+                class="form-control"
+                id="formName"
+                placeholder="Bookmarker Name"
+              />
+            </div>
+
+            <div class="mb-4">
+              <label for="formUrl" class="form-label fw-bold">
+                <i class="fa-solid fa-link pe-2"></i> Site URL
+              </label>
+              <input
+                oninput="validNameInput(this)"
+                type="url"
+                id="formUrl"
+                name="website"
+                placeholder="Website URL"
+                class="form-control"
+              />
+            </div>
+            <div class="button text-center">
+              <button
+                onclick="addData()"
+                class="btn btn-danger px-5 text-center"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="table bg-white mt-4">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="myData"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div
+        class="layer-box d-flex justify-content-center align-items-center d-none"
+      >
+        <div class="box rounded-3 p-4">
+          <div class="lg-box d-flex justify-content-between">
+            <div class="icon-color d-flex mt-2">
+              <span class="d-block bg-danger rounded-circle"></span>
+              <span class="d-block bg-warning rounded-circle"></span>
+              <span class="d-block bg-success rounded-circle"></span>
+            </div>
+            <div class="icon-exit">
+              <i id="exit" class="fa-solid fa-xmark fs-2"></i>
+            </div>
+          </div>
+          <div class="text-error">
+            <h3 class="mt-4">
+              Site Name or Url is not valid, Please follow the rules below :
+            </h3>
+
+            <p class="mt-4 ms-2">
+              <i class="fa-regular fa-circle-right text-danger"></i> Site name
+              must contain at least 3 characters
+            </p>
+
+            <p class="ms-2">
+              <i class="fa-regular fa-circle-right text-danger"></i> Site URL
+              must be a valid one
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
